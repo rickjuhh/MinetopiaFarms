@@ -21,8 +21,8 @@ public class TreeFarmer implements Listener {
 		Player p = e.getPlayer();
 
 		if (e.getBlock().getType().toString().contains("LOG")) {
-			if (!SDBPlayer.createSDBPlayer(e.getPlayer()).getPrefix().equalsIgnoreCase("Houthakker")) {
-				e.getPlayer().sendMessage(Main.getMessage("BeroepNodig").replaceAll("<Beroep>", "houthakker"));
+			if (!SDBPlayer.createSDBPlayer(e.getPlayer()).getPrefix().equalsIgnoreCase("")) {
+				e.getPlayer().sendMessage(Main.getMessage("BeroepNodig").replaceAll("<Beroep>", "Houthakker"));
 				e.setCancelled(true);
 				return;
 			}
