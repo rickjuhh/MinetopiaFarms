@@ -24,10 +24,7 @@ public class InventoryClickListener implements Listener {
 				beroep = "Boer";
 			} else if (e.getSlot() == 12) {
 				beroep = "Houthakker";
-			} else if (e.getSlot() == 14) {
-				beroep = "Mijnwerker";
-			} else if (e.getSlot() == 16) {
-				beroep = "Visser";
+
 			}
 			if (!beroep.equalsIgnoreCase("none")) {
 				if (API.getEcon().getBalance(((Player) e.getWhoClicked())) < Main.getPlugin().getConfig()
@@ -46,39 +43,39 @@ public class InventoryClickListener implements Listener {
 				
 				API.updateScoreboard(((Player) e.getWhoClicked()));
 
-				if (beroep.equalsIgnoreCase("mijnwerker")) {
+				if (beroep.equalsIgnoreCase("")) {
 					if (Main.getPlugin().getConfig().getBoolean("KrijgItemsBijBaanSelect")) {
 						e.getWhoClicked().getInventory().addItem(new ItemStack(Material.DIAMOND_PICKAXE));
 					}
 					for (String cmd: Main.getPlugin().getConfig().getStringList("CommandsUitvoerenBijBaanWissel.Mijnwerker")) {
-						if (!cmd.equalsIgnoreCase("Typ hier jouw commands")) {
+						if (!cmd.equalsIgnoreCase("msg <Player> Goedekeuzen")) {
 							Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceAll("<Player>", e.getWhoClicked().getName()));
 						}
 					}
-				} else if (beroep.equalsIgnoreCase("boer")) {
+				} else if (beroep.equalsIgnoreCase("")) {
 					if (Main.getPlugin().getConfig().getBoolean("KrijgItemsBijBaanSelect")) {
 						e.getWhoClicked().getInventory().addItem(new ItemStack(Material.DIAMOND_HOE));
 					}
 					for (String cmd: Main.getPlugin().getConfig().getStringList("CommandsUitvoerenBijBaanWissel.Boer")) {
-						if (!cmd.equalsIgnoreCase("Typ hier jouw commands")) {
+						if (!cmd.equalsIgnoreCase("msg <Player> Goedekeuzen")) {
 							Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceAll("<Player>", e.getWhoClicked().getName()));
 						}
 					}
-				} else if (beroep.equalsIgnoreCase("houthakker")) {
+				} else if (beroep.equalsIgnoreCase("")) {
 					if (Main.getPlugin().getConfig().getBoolean("KrijgItemsBijBaanSelect")) {
 						e.getWhoClicked().getInventory().addItem(new ItemStack(Material.DIAMOND_AXE));
 					}
 					for (String cmd: Main.getPlugin().getConfig().getStringList("CommandsUitvoerenBijBaanWissel.Houthakker")) {
-						if (!cmd.equalsIgnoreCase("Typ hier jouw commands")) {
+						if (!cmd.equalsIgnoreCase("msg <Player> Goedekeuzen")) {
 							Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceAll("<Player>", e.getWhoClicked().getName()));
 						}
 					}
-				} else if (beroep.equalsIgnoreCase("visser")) {
+				} else if (beroep.equalsIgnoreCase("")) {
 					if (Main.getPlugin().getConfig().getBoolean("KrijgItemsBijBaanSelect")) {
 						e.getWhoClicked().getInventory().addItem(new ItemStack(Material.FISHING_ROD));
 					}
 					for (String cmd: Main.getPlugin().getConfig().getStringList("CommandsUitvoerenBijBaanWissel.Visser")) {
-						if (!cmd.equalsIgnoreCase("Typ hier jouw commands")) {
+						if (!cmd.equalsIgnoreCase("msg <Player> Goedekeuzen")) {
 							Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceAll("<Player>", e.getWhoClicked().getName()));
 						}
 					}
