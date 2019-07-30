@@ -17,7 +17,6 @@ import nl.wouter.minetopiafarms.commands.KiesCMD;
 import nl.wouter.minetopiafarms.commands.MTFarmsCMD;
 import nl.wouter.minetopiafarms.events.BlockBreaker;
 import nl.wouter.minetopiafarms.events.FarmListener;
-import nl.wouter.minetopiafarms.events.FishListener;
 import nl.wouter.minetopiafarms.events.InventoryClickListener;
 import nl.wouter.minetopiafarms.events.NPCClickListener;
 import nl.wouter.minetopiafarms.events.TreeFarmer;
@@ -48,27 +47,17 @@ public class Main extends JavaPlugin {
 
 		getConfig().addDefault("KostenVoorEenBaan", 2500);
 		getConfig().addDefault("KrijgItemsBijBaanSelect", true);
+	
+		getConfig().addDefault("TerugverkoopPrijs.Boer.BEETROOTS", 350);
+		getConfig().addDefault("TerugverkoopPrijs.Boer.WHEAT", 500);
+		getConfig().addDefault("TerugverkoopPrijs.Boer.MELON", 300);
+		getConfig().addDefault("TerugverkoopPrijs.Boer.PUMPKIN", 300);
+		getConfig().addDefault("TerugverkoopPrijs.Boer.CARROTS", 250);
+		getConfig().addDefault("TerugverkoopPrijs.Boer.POTATOES", 250);
+		getConfig().addDefault("TerugverkoopPrijs.Houthakker", 750);
 		
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.COAL_ORE", 10);
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.IRON_ORE", 25);
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.EMERALD_ORE", 30);
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.GOLD_ORE", 25);
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.LAPIS_ORE", 35);
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.REDSTONE_ORE", 25);
-		getConfig().addDefault("TerugverkoopPrijs.Mijnwerker.DIAMOND_ORE", 80);
-		getConfig().addDefault("TerugverkoopPrijs.Boer.BEETROOTS", 35);
-		getConfig().addDefault("TerugverkoopPrijs.Boer.WHEAT", 10);
-		getConfig().addDefault("TerugverkoopPrijs.Boer.MELON", 30);
-		getConfig().addDefault("TerugverkoopPrijs.Boer.PUMPKIN", 30);
-		getConfig().addDefault("TerugverkoopPrijs.Boer.CARROTS", 20);
-		getConfig().addDefault("TerugverkoopPrijs.Boer.POTATOES", 20);
-		getConfig().addDefault("TerugverkoopPrijs.Houthakker", 25);
-		getConfig().addDefault("TerugverkoopPrijs.Visser", 35);
-		
-		getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Boer", Arrays.asList("Typ hier jouw commands"));
-		getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Houthakker", Arrays.asList("Typ hier jouw commands"));
-		getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Mijnwerker", Arrays.asList("Typ hier jouw commands"));
-		getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Visser", Arrays.asList("Typ hier jouw commands"));
+		getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Boer", Arrays.asList("msg <Player> Goedekeuzen"));
+		getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Houthakker", Arrays.asList("msg <Player> Goedekeuzen"));
 		
 		getConfig().addDefault("MogelijkeItemsBijVangst", Arrays.asList("Typ hier welke materials de persoon krijgt."));
 		getConfig().addDefault("VangstItemNaam", "&6Vangst");
