@@ -15,16 +15,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import nl.wouter.minetopiafarms.commands.KiesCMD;
 import nl.wouter.minetopiafarms.commands.MTFarmsCMD;
-import nl.wouter.minetopiafarms.events.BlockBreaker;
 import nl.wouter.minetopiafarms.events.FarmListener;
-import nl.wouter.minetopiafarms.events.FishListener;
 import nl.wouter.minetopiafarms.events.InventoryClickListener;
 import nl.wouter.minetopiafarms.events.NPCClickListener;
-import nl.wouter.minetopiafarms.events.TreeFarmer;
 import nl.wouter.minetopiafarms.utils.CustomFlags;
 import nl.wouter.minetopiafarms.utils.Updat3r;
 import nl.wouter.minetopiafarms.utils.Utils;
-import nl.wouter.minetopiafarms.utils.Utils.TreeObj;
 
 public class Main extends JavaPlugin {
 
@@ -32,11 +28,8 @@ public class Main extends JavaPlugin {
 
 
     public void onEnable() {
-        Bukkit.getPluginManager().registerEvents(new BlockBreaker(), this);
         Bukkit.getPluginManager().registerEvents(new FarmListener(), this);
-        Bukkit.getPluginManager().registerEvents(new TreeFarmer(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
-        Bukkit.getPluginManager().registerEvents(new FishListener(), this);
 
 
         if (Bukkit.getPluginManager().getPlugin("Citizens") != null) {
@@ -66,9 +59,6 @@ public class Main extends JavaPlugin {
         getConfig().addDefault("TerugverkoopPrijs.Visser", 35);
 
         getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Boer", Arrays.asList("Typ hier jouw commands"));
-        getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Houthakker", Arrays.asList("Typ hier jouw commands"));
-        getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Mijnwerker", Arrays.asList("Typ hier jouw commands"));
-        getConfig().addDefault("CommandsUitvoerenBijBaanWissel.Visser", Arrays.asList("Typ hier jouw commands"));
 
         getConfig().addDefault("ItemsBijBaanSelect.Boer",Arrays.asList("DIAMOND_HOE"));
         getConfig().addDefault("ItemsBijBaanSelect.Mijnwerker",Arrays.asList("DIAMOND_PICKAXE"));
